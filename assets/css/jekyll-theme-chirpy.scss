@@ -1,0 +1,145 @@
+---
+---
+
+@import 'main';
+/* append your custom style below */
+// dark || light 내 스타일
+html {
+    // dark
+    &[data-mode="dark"] {
+        #sidebar .sidebar-bottom {
+            a, .mode-toggle {
+                border: 1px solid #24292f;
+            }
+        }
+        #sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom a:hover {background-color: #1d1f27 !important;}
+        #topbar-wrapper {
+          background-color: var(--main-bg);
+          border-bottom: 1px solid var(--main-border-color);
+        }
+    }
+    // light
+    &:not([data-mode="dark"]) {
+        #sidebar .sidebar-bottom {
+            a, .mode-toggle {
+                border: 1px solid #dee2e6;
+            }
+        }
+        #sidebar .sidebar-bottom .mode-toggle:hover, #sidebar .sidebar-bottom a:hover {background-color: #fff !important;}
+        .post-preview {
+            border: 1px solid #ebebeb;
+        }
+        
+        #topbar-wrapper {
+          background-color: #fff;
+          border-bottom: 1px solid #ebebeb;
+        }
+    }
+    
+    // all
+    & {
+        --toc-highlight: #37b77c !important;
+        .btn-outline-primary {
+            --bs-btn-color: #1c4545 !important;
+            --bs-btn-border-color: #1c4545 !important;
+            --bs-btn-hover-bg: #1c4545 !important;
+            --bs-btn-hover-border-color: #1c4545 !important;
+            --bs-btn-active-bg: #1c4545 !important;
+            --bs-btn-active-border-color: #1c4545 !important;
+            --bs-btn-disabled-color: #1c4545 !important;
+            --bs-btn-disabled-border-color: #1c4545 !important;
+        }
+        #page-category a:hover, #page-tag a:hover, .post-tags .post-tag:hover, .post-tail-wrapper .license-wrapper>a:hover, #search-results a:hover, #topbar #breadcrumb a:hover, .content a:not(.img-link):hover, .post-meta a:not([class]):hover, #access-lastmod a:hover, footer a:hover {
+            color: #37b77c !important;
+            border-bottom: 1px solid #37b77c;
+            text-decoration: none;
+        }
+        .btn.btn-outline-primary:not(.disabled):hover {
+            border-color: #1c4545 !important;
+        }
+
+        --site-title-color: #37b77c !important;
+        --sidebar-hover-bg: #1c4545 !important;
+        #sidebar .site-subtitle {font-style: unset !important; color: #eee;}
+        #sidebar .site-title a:hover {color: var(--site-title-color) !important;}
+
+        
+        #main-wrapper > .container {
+          max-width: 100%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          > .row.flex-grow-1 {
+            &, & + .row {
+              width: 100%;
+              max-width: $main-content-max-width;
+              margin:0 auto;
+              padding-left: 1.75rem !important;
+              padding-right: 1.75rem !important;
+            }
+          }
+          #topbar-wrapper {
+            position: sticky;
+            top:0;
+            left:0;
+            z-index: 100;
+            #topbar {
+              max-width: $main-content-max-width;
+              margin:0 auto;
+              padding-left: 2.75rem !important;
+              padding-right: 2.75rem !important;
+              justify-content: flex-start !important;
+              #breadcrumb {
+                width: 75%;
+              }
+              search {
+                margin-left: 1rem !important;
+                margin-right: unset !important;
+              }
+            }
+          }
+        }
+
+        // sidebar 영역
+        #sidebar {
+            background-color: #1d1f27;
+            background-image:
+            repeating-linear-gradient(270deg, rgba(255,255,255,.05), rgba(255,255,255,.05) 1px, transparent 1px, transparent 110px),
+            repeating-linear-gradient(236deg, rgba(255,255,255,.05), rgba(255,255,255,.05) 1px, transparent 1px, transparent 110px);
+            background-size: 100% 250%; 
+            .profile-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 0.8rem;
+                padding-right: 0.8rem;
+            }
+            ul.nav {
+                li.nav-item {
+                    a.nav-link {
+                        gap: 1rem;
+                        color: #aaa;
+                        i {
+                            color: #aaa;
+                            margin-right: unset;
+                        }
+                    }
+                    &.active {
+                        a.nav-link {color: #fff;}
+                        a.nav-link i {color: #fff;}
+                    }
+                }
+            }
+            .sidebar-bottom  {
+                justify-content: center;
+                gap: 1rem;
+                padding:0 2rem;
+                .icon-border {
+                    display: none;
+                }
+                a:not(:last-child) {
+                    margin-right: unset;
+                }
+            }
+        }
+    }
+}
