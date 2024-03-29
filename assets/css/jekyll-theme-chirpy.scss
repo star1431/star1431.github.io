@@ -229,6 +229,12 @@ html {
       }
     }
 
+    // 메인비주얼
+    .main-visual {
+      width: 100%;
+      height: calc(100vh - 3rem);
+    }
+
     @media screen and (max-width: 849px) {
       #main-wrapper > .container {
         > .row.flex-grow-1 {

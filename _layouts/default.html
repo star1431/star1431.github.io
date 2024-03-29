@@ -23,11 +23,8 @@ layout: compress
         {% include topbar.html lang=lang %}
 
         {% if layout.homepage %}
-          <div class="main-visual" style="display: none;">
-            <div class="svg-wrap"></div>
-            <div class="_flex-center">
-              <div class="text-typing"><span>테스트중</span></div>
-            </div>
+          <div class="main-visual">
+            <canvas class="threejs-canvas"></canvas>
           </div>
           <div class="row flex-grow-1 type-home">
             <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
@@ -126,4 +123,7 @@ layout: compress
 
     {% include_cached search-loader.html lang=lang %}
   </body>
+  {% if layout.homepage %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  {% endif %}
 </html>

@@ -1,7 +1,7 @@
 import { displaySearch } from '../components/search-display';
-import { setHeaderScrollHandler } from '../components/header-scrolling';
+import { headerScrollHandler } from '../components/uicommon';
 
 export function initTopbar() {
   displaySearch();
-  setHeaderScrollHandler();
+  headerScrollHandler();
 }
