@@ -23,7 +23,7 @@ layout: compress
         {% include topbar.html lang=lang %}
 
         {% if layout.homepage %}
-          <div class="main-visual">
+          <div class="main-visual" style="display: none;">
             <canvas class="threejs-canvas"></canvas>
           </div>
           <div class="row flex-grow-1 type-home">
@@ -124,6 +124,6 @@ layout: compress
     {% include_cached search-loader.html lang=lang %}
   </body>
   {% if layout.homepage %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   {% endif %}
 </html>
